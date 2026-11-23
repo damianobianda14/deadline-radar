@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deadline Radar</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+  <header class="app-header">
+    <h1>Deadline Radar</h1>
+    <p class="tagline">Every contest deadline, one screen. Never miss a ship date.</p>
+  </header>
+
+  <section class="add-panel" aria-label="Add deadline">
+    <form id="add-form">
+      <input type="text" id="name-input" placeholder="Contest name" required maxlength="80">
+      <input type="datetime-local" id="deadline-input" required>
+      <input type="url" id="url-input" placeholder="Rules URL (optional)">
+      <button type="submit" id="add-button">Add</button>
+    </form>
+    <p id="form-error" class="error" role="alert" hidden></p>
+  </section>
+
+  <section class="list-panel" aria-label="Deadlines">
+    <div class="list-toolbar">
+      <span id="count-label">0 tracked</span>
+      <button id="clear-expired" type="button">Clear expired</button>
+    </div>
+    <ul id="deadline-list" class="deadline-list"></ul>
+    <p id="empty-state" class="empty">Nothing tracked yet. Add your first deadline above.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
